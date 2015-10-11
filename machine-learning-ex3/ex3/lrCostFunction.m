@@ -35,12 +35,11 @@ grad = zeros(size(theta));
 %           temp(1) = 0;   % because we don't add anything for j = 0  
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
-X_theta = transpose(theta).*X;
-J = sum((-y.*log(sigmoid(X_theta))) - ((1-y).*log(1-sigmoid(X_theta))))/m;
+X_theta = X*theta;
+J = 1/m*((-y'*log(sigmoid(X_theta))) - ((1-y')*log(1-sigmoid(X_theta)))) + (lambda/(2*m) * sum(theta(2:end).^2));
 error = sigmoid(X_theta) - y;
-grad0 = sum((transpose(X(:,1))*(error)))/m;
-gradn = sum(transpose(X(2:end,1))*(error(2:end,:)))/m + (lambda/m)*sum(theta(2:end).^2);
-grad = [grad0; gradn];
+thetaStartingFromSecond = [0; theta(2:end)];
+grad = (1/m) * (X'*error) + ((lambda / m) * thetaStartingFromSecond)
 
 
 
