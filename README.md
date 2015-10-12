@@ -12,3 +12,10 @@ The solutions are implemented in Octave scripts.
 
 * Logistic Regression
 * Regularized Logistic Regression
+
+### Week 3
+
+* Vectorized Regularized Logistic Regression
+* One-vs-All Classifier Training
+* One-vs-All Classifier Prediction
+* Neural Network Prediction Function
