@@ -39,7 +39,7 @@ X_theta = X*theta;
 J = 1/m*((-y'*log(sigmoid(X_theta))) - ((1-y')*log(1-sigmoid(X_theta)))) + (lambda/(2*m) * sum(theta(2:end).^2));
 error = sigmoid(X_theta) - y;
 thetaStartingFromSecond = [0; theta(2:end)];
-grad = (1/m) * (X'*error) + ((lambda / m) * thetaStartingFromSecond)
+grad = (1/m) * (X'*error) + ((lambda / m) * thetaStartingFromSecond);
 
 
 
